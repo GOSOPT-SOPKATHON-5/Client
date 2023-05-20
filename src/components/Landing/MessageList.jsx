@@ -6,7 +6,7 @@ const messageCnt = 18;
 
 function MessageList(props) {
   const { userAnswers, setModalOpen } = props;
-  console.log(props);
+
   return (
     <St.MessageListWrapper>
       <div className="messageInfo">

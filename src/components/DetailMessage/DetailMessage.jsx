@@ -1,14 +1,13 @@
+import { useNavigate, useParams } from 'react-router-dom';
+
 import { BackIcon } from '../../assets/icon';
 import CommonViewPage from '../common/CommonViewPage';
-
+import { GOHome } from '../../assets/icon';
+import { MessageIcon } from '../../assets/icon';
 import { ProfileIcon } from '../../assets/icon';
 import { ShareIcon } from '../../assets/icon';
-import { styled } from 'styled-components';
-
-import { MessageIcon } from '../../assets/icon';
 import { SmallLogoIcon } from '../../assets/icon';
-import { useNavigate, useParams } from 'react-router-dom';
-import { GOHome } from '../../assets/icon';
+import { styled } from 'styled-components';
 
 function DetailMessage() {
   const dummy = {
@@ -19,8 +18,7 @@ function DetailMessage() {
   };
 
   const { reviewFlag } = useParams();
-  const flag = reviewFlag ? true : false;
-
+  const flag = reviewFlag === 'true' ? true : false;
   const navigate = useNavigate();
 
   return (
@@ -47,7 +45,12 @@ function DetailMessage() {
 
       <St.BtnWrapper>
         {flag === true ? (
-          <MessageIcon className="message" />
+          <MessageIcon
+            className="message"
+            onClick={() => {
+              navigate('/result');
+            }}
+          />
         ) : (
           <GOHome
             onClick={() => {
