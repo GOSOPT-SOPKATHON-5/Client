@@ -45,7 +45,12 @@ function DetailMessage() {
 
       <St.BtnWrapper>
         {flag === true ? (
-          <MessageIcon className="message" />
+          <MessageIcon
+            className="message"
+            onClick={() => {
+              navigate('/result');
+            }}
+          />
         ) : (
           <GOHome
             onClick={() => {
