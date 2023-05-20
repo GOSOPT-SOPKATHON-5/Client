@@ -87,7 +87,7 @@ function Landing(props) {
             setModalOpen={setModalOpen}
             setReviewFlag={setReviewFlag}
             onClose={() => setModalOpen(false)}
-            userPoint={LANDING_DATA.data.userPoint}
+            userPoint={apiData.userPoint}
           />
         </ModalPortal>
       )}
@@ -96,7 +96,8 @@ function Landing(props) {
           <GotoMessageIcon className="gotoMessageBtn" onClick={() => navigate('/vote')} />
           <LandingHeader />
           <LandingProfile userName={apiData.userName} userPoint={apiData.userPoint} />
-          <MessageList userAnswers={apiData.userAnswers} setModalOpen={setModalOpen} />
+          {/* 형근이 post 성공하면 <MessageList userAnswers={apiData.userAnswers} setModalOpen={setModalOpen} /> */}
+          <MessageList userAnswers={LANDING_DATA.data.userAnswers} setModalOpen={setModalOpen} />
           <Logout />
         </St.LandingWrapper>
       </CommonViewPage>
@@ -119,7 +120,7 @@ const St = {
     .gotoMessageBtn {
       position: fixed;
       top: calc(100vh - 90px);
-      right: calc(50vw - 171.5px);
+      right: calc(50vw - 154.5px);
 
       cursor: pointer;
     }
