@@ -17,9 +17,8 @@
 <br />
 
 ## 👨‍💻 개발자들
-| 깃허브 계정 명 | 깃허브 계정 명 | 깃허브 계정 명 |
+| 오형근 (Geun-Oh) | 심은서 (simeunseo) | 서아름 (seoAreum) |
 | --- | --- | --- |
-| Geun-Oh | simeunseo | seoAreum |
 | https://github.com/Geun-Oh | https://github.com/simeunseo | https://github.com/Arooming |
 
 
@@ -43,8 +42,9 @@
 
 🚀 **브랜치 규칙**
 
-| main | 배포, 시연 영상 제작용 |
+| 브랜치 | 규칙|
 | --- | --- |
+| main | 배포, 시연 영상 제작용 |
 | develop | 실제 개발 |
 | feature/개발하는 기능 | 각자 개발하는 브랜치 |
 
@@ -58,8 +58,9 @@
 
 🚀 **네이밍 규칙**
 
-| 상수 | UPPER_CASE |
+| 구분 | 네이밍 규칙 |
 | --- | --- |
+| 상수 | UPPER_CASE |
 | 리액트 컴포넌트 | PascalCase |
 | 그 외 | camelCase |
 | 컴포넌트 규모가 커지거나 동일한 역할의 페이지인데 종류가 많아져서 나눠야할 때 → index 파일 제작하고 폴더화하기 | PascalCase |
@@ -68,8 +69,9 @@
 
 🚀 **그 외 규칙**
 
-| 컴포넌트 파일 작성 | rfce로 시작 |
+| 구분 | 규칙 |
 | --- | --- |
+| 컴포넌트 파일 작성 | rfce로 시작 |
 | 내부 함수 | const 사용 |
 | 코드 작성 순서 | import ⇒ function ⇒ styled-componet ⇒ export |
 | 스타일 컴포넌트 | St = {}, <St.어쩌구 /> |
