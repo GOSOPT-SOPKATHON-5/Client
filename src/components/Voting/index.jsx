@@ -25,7 +25,7 @@ function index({ reviewFlag }) {
       setModalOpen((prev) => !prev);
       console.log(postData);
       client.post('/', postData);
-      reviewFlag === '' ? navigate('/') : navigate('/detailMessage');
+      navigate(`detailMessage/${reviewFlag}`);
     }
   };
 
