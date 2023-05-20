@@ -9,7 +9,7 @@ ${reset}
     font-weight: 400;
     font-style: normal;
 }
-#root, body, html {
+#modal, #root, body, html {
     width:100%;
     height: 100vh;
     margin: 0 auto;
