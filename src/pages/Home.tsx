@@ -1,4 +1,5 @@
-import { SampleIcon } from '../../public/assets/icon';
+import { SampleIcon } from '../assets/icon';
+
 //이 파일은 지워주세요!
 import { styled } from 'styled-components';
 
