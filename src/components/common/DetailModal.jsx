@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Modal = (props) => {
-  const { onClose, userPoint } = props;
+  const { setReviewFlag, onClose, userPoint } = props;
   const navigate = useNavigate();
 
   return (
@@ -30,7 +30,13 @@ const Modal = (props) => {
 
         <St.BtnWrapper onClick={onClose}>
           <St.BackBtn>취소</St.BackBtn>
-          <St.GoBtn onClick={() => navigate('/vote')}>{userPoint !== 0 ? '확인하기' : '투표 후 확인'}</St.GoBtn>
+          <St.GoBtn
+            onClick={() => {
+              navigate('/vote');
+              setReviewFlag(true);
+            }}>
+            {userPoint !== 0 ? '확인하기' : '투표 후 확인'}
+          </St.GoBtn>
         </St.BtnWrapper>
       </St.ModalContent>
     </St.ModalContainer>

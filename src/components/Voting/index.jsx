@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
+
 import CommonViewPage from '../common/CommonViewPage';
 import IndivCardList from './IndivCardList';
-import ProgressBar from './ProgressBar';
-import client from '../../api/axios';
 import Modal from '../common/VoteModal';
 import ModalPortal from '../common/ModalPortal';
+import ProgressBar from './ProgressBar';
+import client from '../../api/axios';
 import { useNavigate } from 'react-router-dom';
 
 function index({ reviewFlag }) {
+  console.log(reviewFlag);
   const [count, setCount] = useState(1);
   const [shuffle, setShuffle] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);

@@ -1,6 +1,5 @@
-import { ReactComponent as MessageIcon } from '../../assets/icon/message.svg';
+import { NoteIcon } from '../../assets/icon';
 import { styled } from 'styled-components';
-
 function Message(props) {
   const { setModalOpen, keyword, time } = props;
 
@@ -10,7 +9,7 @@ function Message(props) {
         setModalOpen(true);
       }}>
       <St.KeywordWrapper>
-        <MessageIcon />
+        <NoteIcon />
         <h3>{keyword}</h3>
       </St.KeywordWrapper>
       <small>{time}</small>

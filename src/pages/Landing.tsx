@@ -8,6 +8,7 @@ import Modal from '../components/common/DetailModal';
 import ModalPortal from '../components/common/ModalPortal';
 import landingDTO from '../api/getLandingData';
 import { styled } from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 const LANDING_DATA: landingDTO = {
@@ -31,19 +32,28 @@ const LANDING_DATA: landingDTO = {
   },
 };
 
-function Landing() {
+function Landing(props) {
+  const { setReviewFlag } = props;
   const [modalOpen, setModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <>
       {modalOpen && (
         <ModalPortal>
-          <Modal onClose={() => setModalOpen(false)} userPoint={LANDING_DATA.data.userPoint} />
+          <Modal
+            setReviewFlag={setReviewFlag}
+            onClose={() => setModalOpen(false)}
+            userPoint={LANDING_DATA.data.userPoint}
+          />
         </ModalPortal>
       )}
       <CommonViewPage>
         <St.LandingWrapper>
-          <GotoMessageIcon className="gotoMessageBtn" />
+          <button type="button" onClick={() => navigate('/vote')}>
+            <GotoMessageIcon className="gotoMessageBtn" />
+          </button>
+
           <LandingHeader />
           <LandingProfile userName={LANDING_DATA.data.userName} userPoint={LANDING_DATA.data.userPoint} />
           <MessageList userAnswers={LANDING_DATA.data.userAnswers} setModalOpen={setModalOpen} />
@@ -70,6 +80,8 @@ const St = {
       position: fixed;
       top: calc(100vh - 90px);
       right: calc(50vw - 171.5px);
+
+      cursor: pointer;
     }
   `,
 };
