@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import CommonViewPage from '../components/common/CommonViewPage';
 import { GotoMessageIcon } from '../assets/icon';
 import LandingHeader from '../components/Landing/LandingHeader';
@@ -6,12 +8,12 @@ import Logout from '../components/Landing/Logout';
 import MessageList from '../components/Landing/MessageList';
 import Modal from '../components/common/DetailModal';
 import ModalPortal from '../components/common/ModalPortal';
-import landingDTO from '../api/getLandingData';
+import axios from 'axios';
+import client from '../api/axios';
 import { styled } from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 
-const LANDING_DATA: landingDTO = {
+const LANDING_DATA = {
   code: 200,
   message: '조회 성공하였습니다.',
   data: {
@@ -36,6 +38,46 @@ function Landing(props) {
   const { setReviewFlag } = props;
   const [modalOpen, setModalOpen] = useState(false);
   const navigate = useNavigate();
+  const [apiData, setApiData] = useState('');
+
+  let res;
+
+  const getLandingData = async () => {
+    try {
+      client
+        .get('/main')
+        .then((res) => res.data)
+        .then((data) => {
+          if (data.code === 200) {
+            res = data.data;
+            setApiData(res);
+            //console.log(res);
+          }
+        });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  // try {
+  //   client
+  //     .get('/main')
+  //     .then((res) => res.data)
+  //     .then((data) => {
+  //       if (data.code === 200) {
+  //         res = data.data;
+  //         setApiData(res);
+  //         console.log(apiData);
+  //       }
+  //     });
+  // } catch (err) {
+  //   console.log(err);
+  // }
+
+  useEffect(() => {
+    getLandingData();
+    console.log(apiData);
+  }, []);
 
   return (
     <>
@@ -53,8 +95,8 @@ function Landing(props) {
         <St.LandingWrapper>
           <GotoMessageIcon className="gotoMessageBtn" onClick={() => navigate('/vote')} />
           <LandingHeader />
-          <LandingProfile userName={LANDING_DATA.data.userName} userPoint={LANDING_DATA.data.userPoint} />
-          <MessageList userAnswers={LANDING_DATA.data.userAnswers} setModalOpen={setModalOpen} />
+          <LandingProfile userName={apiData.userName} userPoint={apiData.userPoint} />
+          <MessageList userAnswers={apiData.userAnswers} setModalOpen={setModalOpen} />
           <Logout />
         </St.LandingWrapper>
       </CommonViewPage>

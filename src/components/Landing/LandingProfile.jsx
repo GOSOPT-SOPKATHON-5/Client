@@ -2,7 +2,6 @@ import { ReactComponent as UserProfile } from '../../assets/images/user_profile.
 import { styled } from 'styled-components';
 
 function LandingProfile(props) {
-  console.log(props);
   const { userName, userPoint } = props;
 
   return (
