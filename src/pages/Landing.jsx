@@ -51,7 +51,7 @@ function Landing(props) {
           if (data.code === 200) {
             res = data.data;
             setApiData(res);
-            //console.log(res);
+            console.log(res);
           }
         });
     } catch (err) {
@@ -95,9 +95,15 @@ function Landing(props) {
         <St.LandingWrapper>
           <GotoMessageIcon className="gotoMessageBtn" onClick={() => navigate('/vote')} />
           <LandingHeader />
-          <LandingProfile userName={apiData.userName} userPoint={apiData.userPoint} />
+          {apiData.userAnswers && (
+            <>
+              <LandingProfile userName={apiData.userName} userPoint={apiData.userPoint} />
+              <MessageList userAnswers={apiData.userAnswers} setModalOpen={setModalOpen} />
+            </>
+          )}
+          {/* <LandingProfile userName={apiData.userName} userPoint={apiData.userPoint} />
           {/* 형근이 post 성공하면 <MessageList userAnswers={apiData.userAnswers} setModalOpen={setModalOpen} /> */}
-          <MessageList userAnswers={LANDING_DATA.data.userAnswers} setModalOpen={setModalOpen} />
+          {/*<MessageList userAnswers={apiData.userAnswers} setModalOpen={setModalOpen} /> */}
           <Logout />
         </St.LandingWrapper>
       </CommonViewPage>
@@ -112,10 +118,10 @@ const St = {
     display: flex;
     position: relative;
     flex-direction: column;
+    background: radial-gradient(123.06% 123.06% at 50% 123.06%, #ffffff 0%, #8cacff 25%, #16151a 89.58%);
     padding: 0 16px;
 
     height: 100%;
-    background: radial-gradient(123.06% 123.06% at 50% 123.06%, #ffffff 0%, #8cacff 25%, #16151a 89.58%);
 
     .gotoMessageBtn {
       position: fixed;

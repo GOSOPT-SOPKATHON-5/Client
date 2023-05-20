@@ -8,6 +8,7 @@ import { ProfileIcon } from '../../assets/icon';
 import { ShareIcon } from '../../assets/icon';
 import { SmallLogoIcon } from '../../assets/icon';
 import { styled } from 'styled-components';
+import { MessageIcon2 } from '../../assets/icon';
 
 function DetailMessage() {
   const dummy = {
@@ -45,7 +46,7 @@ function DetailMessage() {
 
       <St.BtnWrapper>
         {flag === true ? (
-          <MessageIcon
+          <MessageIcon2
             className="message"
             onClick={() => {
               navigate('/result');
@@ -69,7 +70,7 @@ const St = {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 30px;
   `,
 
   PointWrapper: styled.div`
