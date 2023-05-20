@@ -5,13 +5,13 @@ import DetailMessage from '../../pages/DetailMessage';
 import CommonViewPage from './CommonViewPage';
 import VotingPage from '../../pages/Voting';
 
-const Router = () => {
+const Router = ({ reviewFlag, setReviewFlag }) => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/test" element={<CommonViewPage />} />
-        <Route path="/" element={<Landing />} />
-        <Route path="/vote" element={<VotingPage />} />
+        <Route path="/" element={<Landing setReviewFlag={setReviewFlag} />} />
+        <Route path="/vote" element={<VotingPage reviewFlag={reviewFlag} />} />
         <Route path="/detailmessage" element={<DetailMessage />} />
       </Routes>
     </BrowserRouter>

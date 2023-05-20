@@ -7,7 +7,7 @@ import Modal from '../common/VoteModal';
 import ModalPortal from '../common/ModalPortal';
 import { useNavigate } from 'react-router-dom';
 
-function index() {
+function index({ reviewFlag }) {
   const [count, setCount] = useState(1);
   const [shuffle, setShuffle] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
@@ -25,7 +25,7 @@ function index() {
       setModalOpen((prev) => !prev);
       console.log(postData);
       client.post('/', postData);
-      navigate('/');
+      reviewFlag === '' ? navigate('/') : navigate('/detailMessage');
     }
   };
 
