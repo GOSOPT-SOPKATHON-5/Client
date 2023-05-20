@@ -1,14 +1,16 @@
 import CommonViewPage from '../components/common/CommonViewPage';
 import { GotoMessageIcon } from '../assets/icon';
-import LandingData from '../api/getLandingData';
 import LandingHeader from '../components/Landing/LandingHeader';
 import LandingProfile from '../components/Landing/LandingProfile';
 import Logout from '../components/Landing/Logout';
 import MessageList from '../components/Landing/MessageList';
+import Modal from '../components/common/DetailModal';
+import ModalPortal from '../components/common/ModalPortal';
+import landingDTO from '../api/getLandingData';
 import { styled } from 'styled-components';
 import { useState } from 'react';
 
-const LANDING_DATA: LandingData = {
+const LANDING_DATA: landingDTO = {
   code: 200,
   message: '조회 성공하였습니다.',
   data: {
@@ -30,18 +32,25 @@ const LANDING_DATA: LandingData = {
 };
 
 function Landing() {
-  const [modalOpen, setModalOpen] = useState('false');
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <CommonViewPage>
-      <St.LandingWrapper>
-        <GotoMessageIcon className="gotoMessageBtn" />
-        <LandingHeader />
-        <LandingProfile userName={LANDING_DATA.data.userName} userPoint={LANDING_DATA.data.userPoint} />
-        <MessageList messageList={LANDING_DATA.data.userAnswers} />
-        <Logout />
-      </St.LandingWrapper>
-    </CommonViewPage>
+    <>
+      {modalOpen && (
+        <ModalPortal>
+          <Modal onClose={() => setModalOpen(false)} userPoint={LANDING_DATA.data.userPoint} />
+        </ModalPortal>
+      )}
+      <CommonViewPage>
+        <St.LandingWrapper>
+          <GotoMessageIcon className="gotoMessageBtn" />
+          <LandingHeader />
+          <LandingProfile userName={LANDING_DATA.data.userName} userPoint={LANDING_DATA.data.userPoint} />
+          <MessageList userAnswers={LANDING_DATA.data.userAnswers} setModalOpen={setModalOpen} />
+          <Logout />
+        </St.LandingWrapper>
+      </CommonViewPage>
+    </>
   );
 }
 
@@ -55,7 +64,7 @@ const St = {
     padding: 0 16px;
 
     height: 100%;
-    background: linear-gradient(180deg, #0e0d10 0%, #8cacff 56.06%, #ffffff 100%);
+    background: radial-gradient(123.06% 123.06% at 50% 123.06%, #ffffff 0%, #8cacff 25%, #16151a 89.58%);
 
     .gotoMessageBtn {
       position: fixed;

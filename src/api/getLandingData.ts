@@ -1,4 +1,4 @@
-export interface landingDTO {
+export default interface landingDTO {
   code: 200;
   message: '조회 성공하였습니다.';
   data: {

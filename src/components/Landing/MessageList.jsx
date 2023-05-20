@@ -5,8 +5,8 @@ import { styled } from 'styled-components';
 const messageCnt = 18;
 
 function MessageList(props) {
-  const userAnswers = props.messageList;
-
+  const { userAnswers, setModalOpen } = props;
+  console.log(props);
   return (
     <St.MessageListWrapper>
       <div className="messageInfo">
@@ -18,7 +18,7 @@ function MessageList(props) {
       </div>
       <St.MessagesWrapper>
         {userAnswers.map((item) => {
-          return <Message key={item.id} keyword={item.answer} time={item.createdAt} />;
+          return <Message setModalOpen={setModalOpen} key={item.id} keyword={item.answer} time={item.createdAt} />;
         })}
       </St.MessagesWrapper>
     </St.MessageListWrapper>

@@ -2,10 +2,13 @@ import { ReactComponent as MessageIcon } from '../../assets/icon/message.svg';
 import { styled } from 'styled-components';
 
 function Message(props) {
-  console.log(props);
-  const { keyword, time } = props;
+  const { setModalOpen, keyword, time } = props;
+
   return (
-    <St.MessageWrapper>
+    <St.MessageWrapper
+      onClick={() => {
+        setModalOpen(true);
+      }}>
       <St.KeywordWrapper>
         <MessageIcon />
         <h3>{keyword}</h3>
