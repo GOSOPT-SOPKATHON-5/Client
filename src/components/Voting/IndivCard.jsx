@@ -39,11 +39,12 @@ function IndivCard({ setCount, current, count, shuffle }) {
         <St.SelectSection>
           {localData.data.answers.map(({ id, answer }) => (
             <St.OptionButton
+              count={count}
               onClick={(e) => {
-                setCount(e);
                 const data = JSON.parse(localStorage.getItem('results'));
                 data.results.push({ receiverId: localData.data.receiverId, answerId: id });
                 localStorage.setItem('results', JSON.stringify(data));
+                setCount(e);
               }}
               key={id}>
               {answer}
@@ -115,7 +116,7 @@ const St = {
     border-radius: 52px;
     background-color: rgba(255, 255, 255, 0.15);
     padding: 12px;
-    color: #000;
+    color: ${({ count }) => (count === 3 ? '#000' : '#fff')};
     font-size: 18px;
     &:hover {
       background-color: #000;

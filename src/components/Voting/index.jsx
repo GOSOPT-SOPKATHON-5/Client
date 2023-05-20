@@ -24,7 +24,6 @@ function index({ reviewFlag }) {
     setCount((prev) => prev + 1);
     if (count === 3) {
       const postData = JSON.parse(localStorage.getItem('results'));
-      setModalOpen((prev) => !prev);
       console.log(postData);
       client.post('/', postData);
       navigate(`detailMessage/${reviewFlag}`);

@@ -22,18 +22,18 @@ export default Message;
 const St = {
   MessageWrapper: styled.div`
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 13px 22px;
-    background: rgba(255, 255, 255, 0.16);
-    border-radius: 12px;
+    justify-content: space-between;
     margin-bottom: 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.16);
+    padding: 13px 22px;
 
     small {
-      font-style: normal;
-      font-weight: 500;
-      font-size: 14px;
       line-height: 22px;
+      font-size: 14px;
+      font-weight: 500;
+      font-style: normal;
     }
   `,
   KeywordWrapper: styled.div`
@@ -42,11 +42,11 @@ const St = {
 
     h3 {
       margin-left: 19px;
+      line-height: 22px;
+      font-size: 18px;
+      font-weight: 700;
 
       font-style: normal;
-      font-weight: 700;
-      font-size: 18px;
-      line-height: 22px;
     }
   `,
 };

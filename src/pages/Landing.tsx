@@ -16,7 +16,7 @@ const LANDING_DATA: landingDTO = {
   message: '조회 성공하였습니다.',
   data: {
     userName: '박현정',
-    userPoint: 1,
+    userPoint: 0,
     userAnswers: [
       {
         id: 1,
@@ -56,10 +56,7 @@ function Landing(props) {
       )}
       <CommonViewPage>
         <St.LandingWrapper>
-          <button type="button" onClick={() => navigate('/vote')}>
-            <GotoMessageIcon className="gotoMessageBtn" />
-          </button>
-
+          <GotoMessageIcon className="gotoMessageBtn" onClick={() => navigate('/vote')} />
           <LandingHeader />
           <LandingProfile userName={LANDING_DATA.data.userName} userPoint={LANDING_DATA.data.userPoint} />
           <MessageList userAnswers={LANDING_DATA.data.userAnswers} setModalOpen={setModalOpen} />
@@ -81,6 +78,10 @@ const St = {
 
     height: 100%;
     background: radial-gradient(123.06% 123.06% at 50% 123.06%, #ffffff 0%, #8cacff 25%, #16151a 89.58%);
+
+    button{
+      d
+    }
 
     .gotoMessageBtn {
       position: fixed;

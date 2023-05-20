@@ -34,7 +34,7 @@ const Modal = (props) => {
               onClick={() => {
                 setModalOpen(false);
                 setTimeout(() => {
-                  navigate('/detailMessage');
+                  navigate(`/detailMessage/${true}`);
                 }, 0);
               }}>
               확인하기
