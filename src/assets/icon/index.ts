@@ -9,3 +9,4 @@ export { ReactComponent as SmallLogoIcon } from './Group 6.svg';
 export { ReactComponent as MessageIcon } from './Frame 37.svg';
 export { ReactComponent as GOHome } from './Frame 25.svg';
 export { ReactComponent as NoteIcon } from './note.svg';
+export { ReactComponent as ProfileImg } from './profileImg.svg';
