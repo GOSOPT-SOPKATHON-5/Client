@@ -5,18 +5,24 @@ import dataList from './data';
 import client from '../../api/axios';
 
 function IndivCard({ setCount, current, count, shuffle }) {
-  const [localData, setLocalData] = useState(dataList);
-  // if (current) {
-  //   try {
-  //     const { data } = client.get('/question');
-  //     setLocalData(data);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }
+  const [localData, setLocalData] = useState({});
+  if (current) {
+  }
+  const getData = async () => {
+    try {
+      const data = await client.get('/question');
+      setLocalData(data.data);
+      console.log(data.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    getData();
+  }, []);
   // useEffect(() => {
   //   try {
-  //     const { data } = client.get('/question');
+  //     const = client.get('/question');
   //     setLocalData(data);
   //   } catch (err) {
   //     console.log(err);
@@ -28,28 +34,29 @@ function IndivCard({ setCount, current, count, shuffle }) {
       <St.MainWrapper>
         <St.TitleWrapper>
           <St.CardTitle count={count}>
-            <div>{localData.data.receiverName}</div> 님과 <br /> 연결되는 오늘의 새벽
+            <div>{localData.data && localData.data.receiverName}</div> 님과 <br /> 연결되는 오늘의 새벽
           </St.CardTitle>
           <img src="hyo.png" alt="효원" />
         </St.TitleWrapper>
         <St.CardTitle style={{ marginTop: '35px' }}>
           나는 이 사람과 <br />
-          {localData.data.question}
+          {localData.data && localData.data.question}
         </St.CardTitle>
         <St.SelectSection>
-          {localData.data.answers.map(({ id, answer }) => (
-            <St.OptionButton
-              count={count}
-              onClick={(e) => {
-                const data = JSON.parse(localStorage.getItem('results'));
-                data.results.push({ receiverId: localData.data.receiverId, answerId: id });
-                localStorage.setItem('results', JSON.stringify(data));
-                setCount(e);
-              }}
-              key={id}>
-              {answer}
-            </St.OptionButton>
-          ))}
+          {localData.data &&
+            localData.data.answers.map(({ id, answer }) => (
+              <St.OptionButton
+                count={count}
+                onClick={(e) => {
+                  const data = JSON.parse(localStorage.getItem('results'));
+                  data.results.push({ receiverId: localData.data.receiverId, answerId: id, senderId: 1 });
+                  localStorage.setItem('results', JSON.stringify(data));
+                  setCount(e);
+                }}
+                key={id}>
+                {answer}
+              </St.OptionButton>
+            ))}
         </St.SelectSection>
       </St.MainWrapper>
     </St.IndivCardWrapper>

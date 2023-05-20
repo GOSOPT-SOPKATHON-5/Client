@@ -19,7 +19,9 @@ function DetailMessage() {
   };
 
   const { reviewFlag } = useParams();
-  const flag = reviewFlag === 'true' ? true : false;
+  const flag = reviewFlag ? true : false;
+
+  const navigate = useNavigate();
 
   return (
     <CommonViewPage
