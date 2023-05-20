@@ -37,11 +37,17 @@ function Landing(props) {
   const [modalOpen, setModalOpen] = useState(false);
   const navigate = useNavigate();
 
+  const handleNavigate = () => {
+    navigate('/detailMessage');
+    setModalOpen(false);
+  };
+
   return (
     <>
       {modalOpen && (
         <ModalPortal>
           <Modal
+            setModalOpen={setModalOpen}
             setReviewFlag={setReviewFlag}
             onClose={() => setModalOpen(false)}
             userPoint={LANDING_DATA.data.userPoint}

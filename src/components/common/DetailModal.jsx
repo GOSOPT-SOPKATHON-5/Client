@@ -1,11 +1,9 @@
-import { useLocation, useNavigate } from 'react-router-dom';
-
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 const Modal = (props) => {
-  const { setReviewFlag, onClose, userPoint } = props;
+  const { setModalOpen, setReviewFlag, onClose, userPoint } = props;
   const navigate = useNavigate();
-
   return (
     <St.ModalContainer>
       <St.ModalContent>
@@ -30,13 +28,25 @@ const Modal = (props) => {
 
         <St.BtnWrapper onClick={onClose}>
           <St.BackBtn>취소</St.BackBtn>
-          <St.GoBtn
-            onClick={() => {
-              navigate('/vote');
-              setReviewFlag(true);
-            }}>
-            {userPoint !== 0 ? '확인하기' : '투표 후 확인'}
-          </St.GoBtn>
+          {userPoint !== 0 ? (
+            <St.GoBtn
+              onClick={() => {
+                setModalOpen(false);
+                setTimeout(() => {
+                  navigate('/detailMessage');
+                }, 0);
+              }}>
+              확인하기
+            </St.GoBtn>
+          ) : (
+            <St.GoBtn
+              onClick={() => {
+                navigate('/vote');
+                setReviewFlag(true);
+              }}>
+              투표 후 확인
+            </St.GoBtn>
+          )}
         </St.BtnWrapper>
       </St.ModalContent>
     </St.ModalContainer>

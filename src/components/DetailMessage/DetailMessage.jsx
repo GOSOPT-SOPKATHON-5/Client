@@ -1,8 +1,8 @@
-import { styled } from 'styled-components';
+import { BackIcon } from '../../assets/icon';
 import CommonViewPage from '../common/CommonViewPage';
 import { ProfileIcon } from '../../assets/icon';
-import { BackIcon } from '../../assets/icon';
 import { ShareIcon } from '../../assets/icon';
+import { styled } from 'styled-components';
 
 function DetailMessage() {
   const dummy = {
