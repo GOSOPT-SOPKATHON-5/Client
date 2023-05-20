@@ -1,5 +1,11 @@
+import DetailMessagePage from '../components/DetailMessage/DetailMessage';
+
 function DetailMessage() {
-  return <div>DetailMessage</div>;
+  return (
+    <>
+      <DetailMessagePage />
+    </>
+  );
 }
 
 export default DetailMessage;
