@@ -25,7 +25,7 @@ function index({ reviewFlag }) {
     if (count === 3) {
       const postData = JSON.parse(localStorage.getItem('results'));
       console.log(postData);
-      client.post('/answer', postData);
+      client.post('/answer', { ...postData, changeStatus: true });
       navigate(`/detailMessage/${reviewFlag}`);
     }
   };

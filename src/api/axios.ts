@@ -5,7 +5,7 @@ const client = axios.create({
   headers: {
     'Access-Control-Allow-Origin': '*',
     'Content-type': 'application/json',
-    'user-id': 2,
+    'user-id': 1,
   },
 });
 
