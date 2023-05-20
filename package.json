@@ -11,7 +11,10 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.2",
+    "styled-components": "^6.0.0-rc.1",
+    "styled-reset": "^4.4.7"
   },
   "devDependencies": {
     "@stylelint/postcss-css-in-js": "^0.38.0",
