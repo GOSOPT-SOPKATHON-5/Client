@@ -1,8 +1,8 @@
 import { styled } from 'styled-components';
 import CommonViewPage from '../common/CommonViewPage';
-import { ReactComponent as ProfileIcon } from '../../assets/icon/ic_profile.svg';
-import { ReactComponent as BackIcon } from '../../assets/icon/ic_back.svg';
-import { ReactComponent as ShareIcon } from '../../assets/icon/ic_share.svg';
+import { ProfileIcon } from '../../assets/icon';
+import { BackIcon } from '../../assets/icon';
+import { ShareIcon } from '../../assets/icon';
 
 function DetailMessage() {
   const dummy = {
