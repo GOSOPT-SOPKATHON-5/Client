@@ -1,36 +1,41 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-const Modal = () => {
-  const location = useLocation();
+const Modal = ({ onClose }) => {
   const navigate = useNavigate();
+
+  const dummy = [
+    {
+      point: 5,
+    },
+  ];
 
   return (
     <St.ModalContainer>
       <St.ModalContent>
         <St.ContentWrapper>
-          {/* 포인트 받아오면 포인트 !== 0 ? 아래 문구 리턴 :  (투표를 진행한 후에\n바로 진행하시겠어요?) 하고 onClick도 변경해야함 */}
-          <St.Content>포인트를 사용해서</St.Content>
-          <St.Content>나에게 온 쪽지를 확인할까요?</St.Content>
+          {dummy[0].point !== 0 ? (
+            <>
+              <St.Content>포인트를 사용해서</St.Content>
+              <St.Content>나에게 온 쪽지를 확인할까요?</St.Content>
+            </>
+          ) : (
+            <>
+              <St.Content>투표를 진행한 후에</St.Content>
+              <St.Content>바로 확인하시겠어요?</St.Content>
+            </>
+          )}
         </St.ContentWrapper>
 
         <St.PointWrapper>
           <St.Point>현재 보유 포인트:</St.Point>
-          <St.CurrentPoint>5P</St.CurrentPoint>
+          <St.CurrentPoint>{dummy[0].point}P</St.CurrentPoint>
         </St.PointWrapper>
 
-        <St.BtnWrapper>
-          <St.BackBtn
-            onClick={() => {
-              navigate(`${location.pathname}`);
-            }}>
-            취소
-          </St.BackBtn>
-          <St.GoBtn
-            onClick={() => {
-              navigate(`/detailMessage`);
-            }}>
-            확인하기
+        <St.BtnWrapper onClick={onClose}>
+          <St.BackBtn>취소</St.BackBtn>
+          <St.GoBtn onClick={() => navigate('/detailmessage')}>
+            {dummy[0].point !== 0 ? '확인하기' : '투표 후 확인'}
           </St.GoBtn>
         </St.BtnWrapper>
       </St.ModalContent>
