@@ -13,8 +13,8 @@ ${reset}
     width:100%;
     height: 100vh;
     margin: 0 auto;
+
     font-family: 'Pretendard-Regular';
-    overflow-x: hidden;
 }
 html {
     font-size: 62.5%;
