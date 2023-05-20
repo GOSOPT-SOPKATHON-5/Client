@@ -1,14 +1,14 @@
 import { styled } from 'styled-components';
 import { ReactComponent as RightArrow } from '../../assets/icon/icon.svg';
 
-function ProgressBar({ progress }) {
+function ProgressBar({ progress, shuffle, setShuffle }) {
   return (
     <>
       <St.ProgressLine progress={progress} />
       <St.ProgressAndShuffle>
         <St.ProgressIndicator>{progress}/3</St.ProgressIndicator>
-        <St.ShuffleIndicator>
-          셔플 0/3
+        <St.ShuffleIndicator shuffle={shuffle} onClick={(e) => setShuffle(e)}>
+          셔플 {shuffle}/3
           <RightArrow />
         </St.ShuffleIndicator>
       </St.ProgressAndShuffle>
@@ -37,6 +37,7 @@ const St = {
     font-size: 14px;
   `,
   ShuffleIndicator: styled.span`
+    opacity: ${({ shuffle }) => (shuffle === 3 ? '0.65' : '1')};
     margin-right: 20px;
     color: #fff;
     font-size: 14px;

@@ -1,26 +1,52 @@
 import { styled } from 'styled-components';
 import { ReactComponent as DummyManIcon } from '../../assets/icon/Group 2608530.svg';
+import { useEffect, useState } from 'react';
+import dataList from './data';
+import client from '../../api/axios';
 
-function IndivCard({ userName, setCount }) {
+function IndivCard({ setCount, current, shuffle }) {
+  const [localData, setLocalData] = useState(dataList);
+  // if (current) {
+  //   try {
+  //     const { data } = client.get('/question');
+  //     setLocalData(data);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // }
+  // useEffect(() => {
+  //   try {
+  //     const { data } = client.get('/question');
+  //     setLocalData(data);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // }, [shuffle]);
+
   return (
     <St.IndivCardWrapper>
       <St.MainWrapper>
         <St.TitleWrapper>
           <St.CardTitle>
-            <div>{userName || '남연우'}</div> 님과 <br /> 연결되는 오작교
+            <div>{localData.data.receiverName}</div> 님과 <br /> 연결되는 오작교
           </St.CardTitle>
           <DummyManIcon />
         </St.TitleWrapper>
-        <St.CardTitle style={{ marginTop: '35px' }}>
-          나는 이 사람과
-          <br />
-          000에서 놀고 싶다.
-        </St.CardTitle>
+        <St.CardTitle style={{ marginTop: '35px' }}>{localData.data.question}</St.CardTitle>
         <St.SelectSection>
-          <St.OptionButton onClick={setCount}>차안에서</St.OptionButton>
-          <St.OptionButton onClick={setCount}>놀이공원에서</St.OptionButton>
-          <St.OptionButton onClick={setCount}>솝트에서</St.OptionButton>
-          <St.OptionButton onClick={setCount}>바다에서</St.OptionButton>
+          {localData.data.answers.map(({ id, answer }) => (
+            <St.OptionButton
+              onClick={(e) => {
+                setCount(e);
+                const data = JSON.parse(localStorage.getItem('results'));
+                data.results.push({ receiverId: localData.data.receiverId, answerId: id });
+                console.log(data);
+                localStorage.setItem('results', JSON.stringify(data));
+              }}
+              key={id}>
+              {answer}
+            </St.OptionButton>
+          ))}
         </St.SelectSection>
       </St.MainWrapper>
     </St.IndivCardWrapper>
