@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Landing from '../../pages/Landing';
-import Voting from '../../pages/Voting';
 import DetailMessage from '../../pages/DetailMessage';
 import CommonViewPage from './CommonViewPage';
+import VotingPage from '../../pages/Voting';
 
 const Router = () => {
   return (
@@ -11,7 +11,7 @@ const Router = () => {
       <Routes>
         <Route path="/test" element={<CommonViewPage />} />
         <Route path="/" element={<Landing />} />
-        <Route path="/vote" element={<Voting />} />
+        <Route path="/vote" element={<VotingPage />} />
         <Route path="/detailmessage" element={<DetailMessage />} />
       </Routes>
     </BrowserRouter>
