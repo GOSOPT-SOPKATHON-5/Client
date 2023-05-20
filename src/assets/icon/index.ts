@@ -1,10 +1,4 @@
 // 명명규칙은 xxxxIcon으로 통일
-import { ReactComponent as SampleIcon } from './ic_sample.svg';
-import { ReactComponent as DummyManIcon } from './Group 2608530.svg';
-
-const D = {
-  SampleIcon,
-  DummyManIcon,
-};
-
-export default D;
+export { ReactComponent as ProfileIcon } from './ic_profile.svg';
+export { ReactComponent as BackIcon } from './ic_back.svg';
+export { ReactComponent as ShareIcon } from './ic_share.svg';

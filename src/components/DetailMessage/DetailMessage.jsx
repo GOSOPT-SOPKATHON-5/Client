@@ -45,10 +45,10 @@ const St = {
   UserProfileWrapper: styled.div`
     display: grid;
     justify-content: center;
+    margin-top: 111px;
 
     font-size: 19px;
     font-weight: 500;
-    margin-top: 111px;
 
     .profileIcon {
       position: absolute;
@@ -67,17 +67,17 @@ const St = {
 
   QuestionWrapper: styled.div`
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     margin-top: 23px;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.49);
 
     width: 298px;
     height: 180px;
-    background: rgba(255, 255, 255, 0.49);
-    border: 1px solid #ffffff;
-    border-radius: 20px;
 
     font-size: 24px;
   `,
@@ -94,11 +94,11 @@ const St = {
 
   BtnWrapper: styled.div`
     display: flex;
+
+    gap: 84px;
     justify-content: space-between;
 
     margin: 257px 36px 191px 46px;
-
-    gap: 84px;
   `,
 };
 
