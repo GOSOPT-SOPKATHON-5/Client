@@ -1,7 +1,9 @@
 import { useLocation, useNavigate } from 'react-router-dom';
+
 import styled from 'styled-components';
 
-const Modal = ({ onClose }) => {
+const Modal = (props) => {
+  const { setReviewFlag, onClose, userPoint } = props;
   const navigate = useNavigate();
 
   const dummy = [
@@ -14,7 +16,7 @@ const Modal = ({ onClose }) => {
     <St.ModalContainer>
       <St.ModalContent>
         <St.ContentWrapper>
-          {dummy[0].point !== 0 ? (
+          {userPoint !== 0 ? (
             <>
               <St.Content>포인트를 사용해서</St.Content>
               <St.Content>나에게 온 쪽지를 확인할까요?</St.Content>
@@ -29,7 +31,7 @@ const Modal = ({ onClose }) => {
 
         <St.PointWrapper>
           <St.Point>현재 보유 포인트:</St.Point>
-          <St.CurrentPoint>{dummy[0].point}P</St.CurrentPoint>
+          <St.CurrentPoint>{userPoint}P</St.CurrentPoint>
         </St.PointWrapper>
 
         <St.BtnWrapper onClick={onClose}>
@@ -50,72 +52,72 @@ export default Modal;
 const St = {
   ModalContainer: styled.div`
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    left: 0;
-    top: 0;
+    background: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
   `,
 
   ModalContent: styled.div`
     display: grid;
 
-    width: 324px;
-    height: 204px;
-
     border-radius: 1.5rem;
     background-color: #ffffff;
+
+    width: 324px;
+    height: 204px;
     font-size: 1.7rem;
   `,
 
   ContentWrapper: styled.div`
     margin: 22px 44px 0px 27px;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
     line-height: 28px;
+    font-size: 20px;
+    font-weight: 600;
+    font-style: normal;
   `,
 
   Content: styled.p``,
 
   PointWrapper: styled.div`
     display: flex;
-    margin-left: 27px;
     margin-top: 8px;
-    font-size: 14px;
+    margin-left: 27px;
     color: #5c5c5c;
+    font-size: 14px;
   `,
   Point: styled.p``,
   CurrentPoint: styled.p``,
 
   BtnWrapper: styled.div`
     display: flex;
-    justify-content: center;
+    gap: 8px;
     align-items: center;
+    justify-content: center;
     margin-top: 23px;
     margin-bottom: 17px;
     font-size: 18px;
-    gap: 8px;
   `,
 
   BackBtn: styled.button`
+    border: none;
+    border-radius: 16px;
+    background-color: #f5f4f8;
     width: 141px;
     height: 56px;
-    background-color: #f5f4f8;
     color: #000000;
-    border-radius: 16px;
-    border: none;
   `,
 
   GoBtn: styled.button`
+    border: none;
+    border-radius: 16px;
+    background-color: #000000;
     width: 141px;
     height: 56px;
-    background-color: #000000;
     color: #f5f4f8;
-    border-radius: 16px;
-    border: none;
   `,
 };

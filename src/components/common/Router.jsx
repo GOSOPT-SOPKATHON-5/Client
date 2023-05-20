@@ -5,7 +5,7 @@ import DetailMessage from '../../pages/DetailMessage';
 import CommonViewPage from './CommonViewPage';
 import VotingPage from '../../pages/Voting';
 
-const Router = () => {
+const Router = ({ reviewFlag, setReviewFlag }) => {
   return (
     <BrowserRouter>
       <Routes>
