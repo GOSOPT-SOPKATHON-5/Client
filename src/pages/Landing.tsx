@@ -16,7 +16,7 @@ const LANDING_DATA: landingDTO = {
   message: '조회 성공하였습니다.',
   data: {
     userName: '박현정',
-    userPoint: 1,
+    userPoint: 0,
     userAnswers: [
       {
         id: 1,
@@ -37,11 +37,6 @@ function Landing(props) {
   const [modalOpen, setModalOpen] = useState(false);
   const navigate = useNavigate();
 
-  const handleNavigate = () => {
-    navigate('/detailMessage');
-    setModalOpen(false);
-  };
-
   return (
     <>
       {modalOpen && (
@@ -56,10 +51,7 @@ function Landing(props) {
       )}
       <CommonViewPage>
         <St.LandingWrapper>
-          <button type="button" onClick={() => navigate('/vote')}>
-            <GotoMessageIcon className="gotoMessageBtn" />
-          </button>
-
+          <GotoMessageIcon className="gotoMessageBtn" onClick={() => navigate('/vote')} />
           <LandingHeader />
           <LandingProfile userName={LANDING_DATA.data.userName} userPoint={LANDING_DATA.data.userPoint} />
           <MessageList userAnswers={LANDING_DATA.data.userAnswers} setModalOpen={setModalOpen} />

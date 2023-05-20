@@ -3,7 +3,7 @@ export default interface landingDTO {
   message: '조회 성공하였습니다.';
   data: {
     userName: '박현정';
-    userPoint: 1;
+    userPoint: number;
     userAnswers: [
       {
         id: 1;

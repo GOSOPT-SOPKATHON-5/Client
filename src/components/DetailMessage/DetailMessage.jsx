@@ -6,7 +6,7 @@ import { ShareIcon } from '../../assets/icon';
 import { styled } from 'styled-components';
 
 import { MessageIcon } from '../../assets/icon';
-import { LogoIcon } from '../../assets/icon';
+import { SmallLogoIcon } from '../../assets/icon';
 import { useNavigate, useParams } from 'react-router-dom';
 import { GOHome } from '../../assets/icon';
 
@@ -18,9 +18,8 @@ function DetailMessage() {
     point: 6,
   };
 
-  let { reviewFlag } = useParams();
-
-  const navigate = useNavigate();
+  const { reviewFlag } = useParams();
+  const flag = reviewFlag === 'true' ? true : false;
 
   return (
     <CommonViewPage
@@ -41,12 +40,12 @@ function DetailMessage() {
       </St.UserProfileWrapper>
 
       <St.LogoWrapper>
-        <LogoIcon className="logo" />
+        <SmallLogoIcon className="logo" />
       </St.LogoWrapper>
 
       <St.BtnWrapper>
-        {reviewFlag === ':true' ? (
-          <></>
+        {flag === true ? (
+          <MessageIcon className="message" />
         ) : (
           <GOHome
             onClick={() => {
@@ -54,7 +53,6 @@ function DetailMessage() {
             }}
           />
         )}
-        <MessageIcon className="message" />
       </St.BtnWrapper>
     </CommonViewPage>
   );
@@ -64,40 +62,40 @@ const St = {
   UserProfileWrapper: styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin-top: 134px;
+    justify-content: center;
+    margin-top: 100px;
   `,
 
   PointWrapper: styled.div`
     display: flex;
-    justify-content: center;
+    gap: 7px;
     align-items: center;
+    justify-content: center;
     margin-top: 23px;
+    border: 0.5px solid #ffffff;
+    border-radius: 64px;
+
+    background: rgba(255, 255, 255, 0.16);
 
     width: 123px;
     height: 32px;
-
-    background: rgba(255, 255, 255, 0.16);
-    border: 0.5px solid #ffffff;
-    border-radius: 64px;
-    gap: 7px;
   `,
   Point: styled.p`
     font-size: 14px;
   `,
   CurrentPoint: styled.p`
-    font-weight: 800;
-    font-size: 20px;
     line-height: 22px;
     color: #8cacff;
+    font-size: 20px;
+    font-weight: 800;
   `,
 
   Other: styled.p`
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 22px;
     margin-left: -5px;
+    line-height: 22px;
+    font-size: 20px;
+    font-weight: 800;
   `,
 
   LogoWrapper: styled.div`
@@ -110,9 +108,9 @@ const St = {
 
   UserNameWrapper: styled.div`
     display: flex;
-    font-weight: 700;
-    font-size: 24px;
     line-height: 22px;
+    font-size: 24px;
+    font-weight: 700;
   `,
   UserName: styled.p`
     color: #5f52bb;
