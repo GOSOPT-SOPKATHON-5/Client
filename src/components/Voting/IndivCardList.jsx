@@ -6,7 +6,7 @@ function IndivCardList({ count, setCount }) {
   return (
     <St.IndivCardWrapperList xcount={XCount}>
       {[0, 0, 0].map((_, idx) => (
-        <IndivCard setCount={setCount} current={idx === count} key={idx} />
+        <IndivCard setCount={setCount} current={idx === count} count={count} key={idx} />
       ))}
     </St.IndivCardWrapperList>
   );
