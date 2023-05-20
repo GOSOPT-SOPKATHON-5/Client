@@ -12,7 +12,7 @@ const Router = ({ reviewFlag, setReviewFlag }) => {
         <Route path="/test" element={<CommonViewPage />} />
         <Route path="/" element={<Landing setReviewFlag={setReviewFlag} />} />
         <Route path="/vote" element={<VotingPage reviewFlag={reviewFlag} />} />
-        <Route path="/detailmessage/:reviewFlag" element={<DetailMessage />} />
+        <Route path="/detailMessage/:reviewFlag" element={<DetailMessage />} />
       </Routes>
     </BrowserRouter>
   );

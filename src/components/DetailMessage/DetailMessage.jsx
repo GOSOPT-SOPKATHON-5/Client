@@ -18,9 +18,8 @@ function DetailMessage() {
     point: 6,
   };
 
-  let { reviewFlag } = useParams();
-
-  const navigate = useNavigate();
+  const { reviewFlag } = useParams();
+  const flag = reviewFlag === 'true' ? true : false;
 
   return (
     <CommonViewPage
@@ -45,8 +44,8 @@ function DetailMessage() {
       </St.LogoWrapper>
 
       <St.BtnWrapper>
-        {reviewFlag === ':true' ? (
-          <></>
+        {flag === true ? (
+          <MessageIcon className="message" />
         ) : (
           <GOHome
             onClick={() => {
@@ -54,7 +53,6 @@ function DetailMessage() {
             }}
           />
         )}
-        <MessageIcon className="message" />
       </St.BtnWrapper>
     </CommonViewPage>
   );
@@ -66,7 +64,7 @@ const St = {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 134px;
+    margin-top: 100px;
   `,
 
   PointWrapper: styled.div`

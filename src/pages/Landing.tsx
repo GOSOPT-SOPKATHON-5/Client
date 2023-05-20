@@ -37,11 +37,6 @@ function Landing(props) {
   const [modalOpen, setModalOpen] = useState(false);
   const navigate = useNavigate();
 
-  const handleNavigate = () => {
-    navigate('/detailMessage');
-    setModalOpen(false);
-  };
-
   return (
     <>
       {modalOpen && (
@@ -78,10 +73,6 @@ const St = {
 
     height: 100%;
     background: radial-gradient(123.06% 123.06% at 50% 123.06%, #ffffff 0%, #8cacff 25%, #16151a 89.58%);
-
-    button{
-      d
-    }
 
     .gotoMessageBtn {
       position: fixed;
