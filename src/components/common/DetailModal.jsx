@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const Modal = (props) => {
   const { setModalOpen, setReviewFlag, onClose, userPoint } = props;
   const navigate = useNavigate();
+
   return (
     <St.ModalContainer>
       <St.ModalContent>

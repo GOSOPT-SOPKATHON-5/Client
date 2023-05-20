@@ -10,8 +10,7 @@ const St = {
   CommonViewPageWrapper: styled.section`
     position: absolute;
     top: 0;
-    transition-duration: 0.4s;
-    background-color: #000;
+    
     width: 100vw;
     max-width: 375px;
     height: 100vh;

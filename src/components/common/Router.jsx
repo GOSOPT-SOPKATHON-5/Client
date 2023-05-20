@@ -10,9 +10,9 @@ const Router = ({ reviewFlag, setReviewFlag }) => {
     <BrowserRouter>
       <Routes>
         <Route path="/test" element={<CommonViewPage />} />
-        <Route path="/" element={<Landing setReviewFlag={setReviewFlag} />} />
-        <Route path="/vote" element={<VotingPage reviewFlag={reviewFlag} />} />
-        <Route path="/detailmessage" element={<DetailMessage />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/vote" element={<VotingPage />} />
+        <Route path="/detailmessage/:reviewFlag" element={<DetailMessage />} />
       </Routes>
     </BrowserRouter>
   );
