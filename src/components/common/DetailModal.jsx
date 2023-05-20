@@ -1,20 +1,16 @@
 import { useLocation, useNavigate } from 'react-router-dom';
+
 import styled from 'styled-components';
 
-const Modal = ({ onClose }) => {
+const Modal = (props) => {
+  const { setReviewFlag, onClose, userPoint } = props;
   const navigate = useNavigate();
-
-  const dummy = [
-    {
-      point: 5,
-    },
-  ];
 
   return (
     <St.ModalContainer>
       <St.ModalContent>
         <St.ContentWrapper>
-          {dummy[0].point !== 0 ? (
+          {userPoint !== 0 ? (
             <>
               <St.Content>포인트를 사용해서</St.Content>
               <St.Content>나에게 온 쪽지를 확인할까요?</St.Content>
@@ -29,13 +25,17 @@ const Modal = ({ onClose }) => {
 
         <St.PointWrapper>
           <St.Point>현재 보유 포인트:</St.Point>
-          <St.CurrentPoint>{dummy[0].point}P</St.CurrentPoint>
+          <St.CurrentPoint>{userPoint}P</St.CurrentPoint>
         </St.PointWrapper>
 
         <St.BtnWrapper onClick={onClose}>
           <St.BackBtn>취소</St.BackBtn>
-          <St.GoBtn onClick={() => navigate('/detailmessage')}>
-            {dummy[0].point !== 0 ? '확인하기' : '투표 후 확인'}
+          <St.GoBtn
+            onClick={() => {
+              navigate('/vote');
+              setReviewFlag(true);
+            }}>
+            {userPoint !== 0 ? '확인하기' : '투표 후 확인'}
           </St.GoBtn>
         </St.BtnWrapper>
       </St.ModalContent>
