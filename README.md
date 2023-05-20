@@ -37,7 +37,7 @@
 | 오형근 (Geun-Oh) | 심은서 (simeunseo) | 서아름 (seoAreum) |
 | --- | --- | --- |
 | https://github.com/Geun-Oh | https://github.com/simeunseo | https://github.com/Arooming |
-|  |  |  |
+| 리드, 초기 세팅, 투표 페이지 | 초기 세팅, 랜딩 페이지 | 답변 확인 페이지, 모달 |
 
 
 <br />
