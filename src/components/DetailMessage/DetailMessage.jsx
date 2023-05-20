@@ -20,6 +20,7 @@ function DetailMessage() {
 
   const { reviewFlag } = useParams();
   const flag = reviewFlag === 'true' ? true : false;
+  const navigate = useNavigate();
 
   return (
     <CommonViewPage
@@ -45,7 +46,12 @@ function DetailMessage() {
 
       <St.BtnWrapper>
         {flag === true ? (
-          <MessageIcon className="message" />
+          <MessageIcon
+            className="message"
+            onClick={() => {
+              navigate('/result');
+            }}
+          />
         ) : (
           <GOHome
             onClick={() => {
