@@ -92,8 +92,10 @@
     ├── App.jsx ✡️ 앱의 라우팅과 글로벌 스타일 지정
     ├── index.js
     ├── component
-    ├── common 🗂 공통으로 쓰일 컴포넌트 저장
-    │   └── main 🗂 main 페이지에 쓰일 컴포넌트 저장
+    |    └── common 🗂 공통으로 쓰일 컴포넌트 저장
+    |       ├── layout
+    |       ├── header
+    |       └── footer
     ├── pages 🗂 라우팅 시 보여질 페이지 컴포넌트 저장
     │   
     └── styles
