@@ -1,5 +1,7 @@
-function Voting() {
-  return <div>Voting</div>;
+import Voting from '../components/Voting';
+
+function VotingPage() {
+  return <Voting />;
 }
 
-export default Voting;
+export default VotingPage;

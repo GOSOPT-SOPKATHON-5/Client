@@ -12,11 +12,11 @@ const St = {
     top: 0;
     background-color: #000;
     width: 100vw;
-    max-width: 500px;
+    max-width: 375px;
     height: 100vh;
     color: #fff;
-    @media screen and (min-width: 500px) {
-      left: calc(50vw - 250px);
+    @media screen and (min-width: 375px) {
+      left: calc(50vw - 187.5px);
     }
   `,
 };
