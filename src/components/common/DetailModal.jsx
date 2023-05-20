@@ -6,7 +6,7 @@ const Modal = ({ onClose }) => {
 
   const dummy = [
     {
-      point: 5,
+      point: 0,
     },
   ];
 
@@ -34,9 +34,11 @@ const Modal = ({ onClose }) => {
 
         <St.BtnWrapper onClick={onClose}>
           <St.BackBtn>취소</St.BackBtn>
-          <St.GoBtn onClick={() => navigate('/detailmessage')}>
-            {dummy[0].point !== 0 ? '확인하기' : '투표 후 확인'}
-          </St.GoBtn>
+          {dummy[0].point !== 0 ? (
+            <St.GoBtn onClick={() => navigate('/detailmessage')}>확인</St.GoBtn>
+          ) : (
+            <St.GoBtn onClick={() => navigate('/vote')}>투표 후 확인</St.GoBtn>
+          )}
         </St.BtnWrapper>
       </St.ModalContent>
     </St.ModalContainer>
