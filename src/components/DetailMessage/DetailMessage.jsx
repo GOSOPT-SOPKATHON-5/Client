@@ -4,18 +4,18 @@ import { BackIcon } from '../../assets/icon';
 import CommonViewPage from '../common/CommonViewPage';
 import { GOHome } from '../../assets/icon';
 import { MessageIcon } from '../../assets/icon';
+import { MessageIcon2 } from '../../assets/icon';
 import { ProfileIcon } from '../../assets/icon';
 import { ShareIcon } from '../../assets/icon';
 import { SmallLogoIcon } from '../../assets/icon';
 import { styled } from 'styled-components';
-import { MessageIcon2 } from '../../assets/icon';
 
 function DetailMessage() {
   const dummy = {
     name: '심은서',
     question: '나는 이 사람과 # 에서 놀고 싶다',
     answer: '놀이공원',
-    point: 6,
+    point: 10,
   };
 
   const { reviewFlag } = useParams();
