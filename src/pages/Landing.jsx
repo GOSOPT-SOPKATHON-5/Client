@@ -121,12 +121,10 @@ const St = {
     background: radial-gradient(123.06% 123.06% at 50% 123.06%, #ffffff 0%, #8cacff 25%, #16151a 89.58%);
     padding: 0 16px;
 
-    height: 100%;
-
     .gotoMessageBtn {
-      position: fixed;
+      position: sticky;
       top: calc(100vh - 90px);
-      right: calc(50vw - 154.5px);
+      left: 100vw;
 
       cursor: pointer;
     }
