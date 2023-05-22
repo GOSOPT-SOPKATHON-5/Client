@@ -1,14 +1,16 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import Landing from '../../pages/Landing';
-import DetailMessage from '../../pages/DetailMessage';
 import CommonViewPage from './CommonViewPage';
-import VotingPage from '../../pages/Voting';
+import DetailMessage from '../../pages/DetailMessage';
+import Landing from '../../pages/Landing';
 import Result from '../Result/Result';
+import ScrollToTop from './ScrollToTop';
+import VotingPage from '../../pages/Voting';
 
 const Router = ({ reviewFlag, setReviewFlag }) => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/test" element={<CommonViewPage />} />
         <Route path="/" element={<Landing setReviewFlag={setReviewFlag} />} />
