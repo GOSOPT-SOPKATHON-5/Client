@@ -3,34 +3,39 @@
 
 
 ### 1️⃣ 랜딩 페이지
+<img src="https://github.com/GOSOPT-SOPKATHON-5/SOPKATHON5-Client/assets/55528304/c6ff3c13-bec8-4fc1-b88c-b1e7bda05de4" height="400"></img>
 
-**프로필** 유저 프로필 사진과 이름을 보여준다.<br/>
-**메시지 확인** 로그인된 유저에게 전송된 답변의 일부(키워드)를 보여준다.<br/>
-**투표 하러 가기 버튼** 다른 유저에 대한 답변을 할 수 있는 창으로 넘어간다.<br/>
-**포인트 확인** 현재 나에게 쌓인 포인트 수를 보여준다..
+**프로필** | 유저 프로필 사진과 이름을 보여준다.<br/>
+**메시지 확인** | 로그인된 유저에게 전송된 답변의 일부(키워드)를 보여준다.<br/>
+**투표 하러 가기 버튼** | 다른 유저에 대한 답변을 할 수 있는 창으로 넘어간다.<br/>
+**포인트 확인** | 현재 나에게 쌓인 포인트 수를 보여준다..
 
 <br />
 
 ### 2️⃣ 투표 페이지
+<img src="https://github.com/GOSOPT-SOPKATHON-5/SOPKATHON5-Client/assets/55528304/53197502-ada4-4e18-aa8c-823d88a1dc18" height="400"></img>
 
-**사람** 랜덤으로 내가 투표할 사람이 정해진다.<br/>
-**질문** 특정 부분에 구멍이 뚫린 랜덤 질문이 주어진다.<br/>
-**투표** 구멍에 들어갈 키워드를 고른다.<br/>
-**스킵 버튼** 스킵 버튼을 누르면 투표할 사람과 질문이 달라진다.
+**사람** | 랜덤으로 내가 투표할 사람이 정해진다.<br/>
+**질문** | 특정 부분에 구멍이 뚫린 랜덤 질문이 주어진다.<br/>
+**투표** | 구멍에 들어갈 키워드를 고른다.<br/>
+**스킵 버튼** | 스킵 버튼을 누르면 투표할 사람과 질문이 달라진다.
 
 <br />
 
 ### 3️⃣ 답변 확인 페이지
+<img src="https://github.com/GOSOPT-SOPKATHON-5/SOPKATHON5-Client/assets/55528304/dad938b2-f77b-474a-93ba-d9b2c324b252" height="400"></img>
 
-**사람** 누가 답변한 건지를 보여준다.<br/>
-**질문** 구멍이 메워진 질문 전체를 보여준다.
+**사람** | 누가 답변한 건지를 보여준다.<br/>
+**질문** | 구멍이 메워진 질문 전체를 보여준다.
 
 <br />
 
 ### 4️⃣ 모달
+<img src="https://github.com/GOSOPT-SOPKATHON-5/SOPKATHON5-Client/assets/55528304/6f3ef97a-3f71-43c2-b281-e82e535c7eb1" height="400"></img>
+<img src="https://github.com/GOSOPT-SOPKATHON-5/SOPKATHON5-Client/assets/55528304/e954c976-b952-4169-bcb5-a091bae50f56" height="400"></img>
 
-**코인이 없을 때** '답변을 개봉하려면 코인이 필요합니다. 코인을 얻기 위해 투표를 하러 가시겠습니까?' 라는 문구를 띄우고 투표 페이지로 넘어가는 버튼을 보여준다.<br/>
-**코인이 있을 때** '답변을 개봉하려면 코인이 필요합니다. 코인을 차감하고 투표를 하러 가시겠습니까?' 라는 문구를 띄우고 투표 페이지로 넘어가는 버튼을 보여준다.
+**코인이 없을 때** | '답변을 개봉하려면 코인이 필요합니다. 코인을 얻기 위해 투표를 하러 가시겠습니까?' 라는 문구를 띄우고 투표 페이지로 넘어가는 버튼을 보여준다.<br/>
+**코인이 있을 때** | '답변을 개봉하려면 코인이 필요합니다. 코인을 차감하고 투표를 하러 가시겠습니까?' 라는 문구를 띄우고 투표 페이지로 넘어가는 버튼을 보여준다.
 
 
 <br />
@@ -42,11 +47,13 @@ https://github.com/GOSOPT-SOPKATHON-5/SOPKATHON5-Client/assets/55528304/0747ebfe
 
 
 ## 👨‍💻 개발자들
+<small>근서름 폼미폼미~</small>
 | 오형근 (Geun-Oh) | 심은서 (simeunseo) | 서아름 (seoAreum) |
 | --- | --- | --- |
-| https://github.com/Geun-Oh | https://github.com/simeunseo | https://github.com/Arooming |
+| <div align="center"><img alt="그니그니의 프로필 사진" src="https://avatars.githubusercontent.com/u/86425955?v=4" width="200"></img></div> | <div align="center"><img alt="심은서의 프로필 사진" src="https://avatars.githubusercontent.com/u/55528304?v=4" width="200"></img></div> | <div align="center"><img alt="아루밍의 프로필 사진" src="https://avatars.githubusercontent.com/u/80264647?v=4" width="200"></img></div> |
+| [@Geun-Oh](https://github.com/Geun-Oh) | [@simeunseo](https://github.com/simeunseo) | [@Arooming](https://github.com/Arooming) |
 | 리드, 초기 세팅, 투표 페이지 | 초기 세팅, 랜딩 페이지 | 답변 확인 페이지, 모달 |
-| `[GET] 랜덤 질문 및 답변 조회` `[POST] 질문 및 답변 저장` | `[GET] 메인화면 조회` | `[GET] 질문 ` |
+| `[GET] 랜덤 질문 및 답변 조회`<br/>`[POST] 질문 및 답변 저장` | `[GET] 메인화면 조회` | `[GET] 질문 답변 결과 상세보기` |
 
 
 <br />
