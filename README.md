@@ -1,4 +1,6 @@
-## 솝닥솝닥의 핵심 기능
+## DAWNNECT
+![던넥트](https://github.com/GOSOPT-SOPKATHON-5/SOPKATHON5-Client/assets/55528304/f546170c-2a11-4e9c-9eec-4385188614dd)
+
 
 ### 1️⃣ 랜딩 페이지
 
@@ -33,12 +35,18 @@
 
 <br />
 
+## 👍 시연영상
+https://github.com/GOSOPT-SOPKATHON-5/SOPKATHON5-Client/assets/55528304/0747ebfe-d748-48c6-940f-e9592381e449
+
+<br />
+
+
 ## 👨‍💻 개발자들
 | 오형근 (Geun-Oh) | 심은서 (simeunseo) | 서아름 (seoAreum) |
 | --- | --- | --- |
 | https://github.com/Geun-Oh | https://github.com/simeunseo | https://github.com/Arooming |
 | 리드, 초기 세팅, 투표 페이지 | 초기 세팅, 랜딩 페이지 | 답변 확인 페이지, 모달 |
-| `GET` `POST` | `GET` | `GET` |
+| `[GET] 랜덤 질문 및 답변 조회` `[POST] 질문 및 답변 저장` | `[GET] 메인화면 조회` | `[GET] 질문 ` |
 
 
 <br />
